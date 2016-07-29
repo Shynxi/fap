@@ -1,0 +1,15 @@
+{
+  "name": "horst-clickdummy",
+  "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "v1.8.0"
+  },
+  "private": true
+}
