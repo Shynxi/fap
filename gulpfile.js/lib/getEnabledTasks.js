@@ -2,8 +2,8 @@ var config  = require('../config')
 var compact = require('lodash/compact')
 
 // Grouped by what can run in parallel
-var assetTasks = ['fonts', 'iconFont', 'images', 'svgSprite']
-var codeTasks = ['html', 'css', 'js']
+var assetTasks = config.assetTasks
+var codeTasks = config.codeTasks
 
 module.exports = function(env) {
 

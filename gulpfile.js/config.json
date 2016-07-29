@@ -4,6 +4,9 @@
     "dest": "./public"
   },
 
+  "assetTasks": ["bowerFiles", "fonts", "iconFont", "images", "svgSprite"],
+  "codeTasks": ["html", "css", "js"],
+
   "tasks": {
     "browserSync": {
       "server": {
@@ -18,10 +21,15 @@
 
     "bower": {
       "src": "bower_components",
-      "dest": "public/vendor"
+      "dest": "vendor"
     },
 
+    "bowerFiles": {},
+
     "js": {
+      "moduleAlias": {
+        "jquery": "./../../vendor/jquery/dist/jquery"
+      },
       "src": "javascripts",
       "dest": "javascripts",
       "entries": {
@@ -34,6 +42,7 @@
       },
       "extractSharedJs": false
     },
+
     "css": {
       "src": "stylesheets",
       "dest": "stylesheets",
@@ -83,10 +92,6 @@
       "src": "icons",
       "dest": "images",
       "extensions": ["svg"]
-    },
-
-    "webdependencies.js": {
-
     },
 
     "production" : {

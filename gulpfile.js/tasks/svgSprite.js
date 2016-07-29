@@ -10,7 +10,10 @@ var path        = require('path')
 var svgSpriteTask = function() {
 
   var settings = {
-    src: path.join(config.root.src, config.tasks.svgSprite.src, '/*.svg'),
+    src: [
+      path.join(config.root.src, config.tasks.svgSprite.src, '/*.svg'),
+      path.join(config.tasks.bower.dest, '/**/*.svg')
+    ],
     dest: path.join(config.root.dest, config.tasks.svgSprite.dest)
   }
 

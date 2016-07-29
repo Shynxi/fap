@@ -4,7 +4,8 @@ if(!config.tasks.bower) return
 var bower = require('gulp-bower')
 var gulp  = require('gulp')
 
-gulp.task('bower', function() {
+var bowerTask = function() {
     return bower({ directory: config.tasks.bower.src })
-        .pipe(gulp.dest(config.tasks.bower.dest))
-});
+};
+gulp.task('bower', bowerTask);
+module.exports = bowerTask

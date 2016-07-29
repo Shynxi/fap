@@ -7,3 +7,5 @@ node_modules
 **/generated/_icons.sass
 npm-debug.log
 .idea
+/bower_components
+/vendor

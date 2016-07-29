@@ -7,12 +7,16 @@ var gulp        = require('gulp')
 var path        = require('path')
 
 var paths = {
-  src: path.join(config.root.src, config.tasks.fonts.src, '/**/*.{' + config.tasks.fonts.extensions + '}'),
+  src: [
+    path.join(config.root.src, config.tasks.fonts.src, '/**/*.{' + config.tasks.fonts.extensions + '}'),
+    path.join(config.tasks.bower.dest, '/**/*.{' + config.tasks.fonts.extensions + '}'),
+    '*!README.md'
+  ],
   dest: path.join(config.root.dest, config.tasks.fonts.dest)
 }
 
 var fontsTask = function() {
-  return gulp.src([paths.src, '*!README.md'])
+  return gulp.src(paths.src)
     .pipe(changed(paths.dest)) // Ignore unchanged files
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())

@@ -20,10 +20,17 @@ module.exports = function(env) {
 
   var webpackConfig = {
     context: jsSrc,
-    plugins: [],
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery"
+      })
+    ],
     resolve: {
       root: jsSrc,
-      extensions: [''].concat(extensions)
+      extensions: [''].concat(extensions),
+      alias: config.tasks.js.moduleAlias
     },
     module: {
       loaders: [
@@ -31,8 +38,14 @@ module.exports = function(env) {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
-          query: config.tasks.js.babel
+          query: config.tasks.js.babel,
+        },
+        { test: /vendor\/.+\.(jsx|js)$/,
+          loader: 'imports?jQuery=jquery,$=jquery,this=>window'
         }
+      ],
+      noParse: [
+        /[\/\\]node_modules[\/\\]angular[\/\\]angular\.js$/
       ]
     }
   }
