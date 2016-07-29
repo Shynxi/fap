@@ -58,6 +58,10 @@ module.exports = function(env) {
           loaders: ["style", "css", "sass"]
         },
         {
+          test: /\.sass$/,
+          loaders: ["style", "css", "sass"]
+        },
+        {
           test: /bootstrap\/dist\/js\/umd\//,
           loader: 'imports?jQuery=jquery'
         }

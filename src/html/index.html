@@ -4,11 +4,37 @@
   Docs: https://mozilla.github.io/nunjucks/api.html
 #}
 
-{% extends 'layouts/application.html' %}
+{% extends 'layouts/default.html' %}
 
-{% block content %}
-  <h1 data-module="example">Hello World!</h1>
-  <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-    Tooltip on top
-  </button>
+{% block main %}
+    <div class="row">
+        <div class="container">
+            {% include 'content/startseite.banner.html' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            Small Cards
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            Large Card
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            Medium Cards
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            Small Cards
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            Slider
+        </div>
+    </div>
 {% endblock %}

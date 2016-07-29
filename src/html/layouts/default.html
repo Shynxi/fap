@@ -1,0 +1,50 @@
+{% from 'macros/helpers.html' import sprite %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  {% include "shared/app-icons.html" %}
+  {% block head %}{% endblock %}
+  <title>{% block title %}{{ title }}{% endblock %}</title>
+</head>
+
+<body>
+<header>
+  <nav class="meta-navigation navbar navbar-fixed-top navbar-sticky-top bg-primary navbar-dark">
+    <a class="navbar-brand" href="#">
+      {% block logo %}
+        <img src="images/logo.jpg" alt="logo"/>
+      {% endblock logo %}
+    </a>
+    {% block metaNavigation %}
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Zu REWE.de <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Facebook</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Youtube</a>
+      </li>
+    </ul>
+    {% endblock metaNavigation %}
+  </nav>
+</header>
+<div class="container">
+  {% block main %}
+    <div class="page">
+      <h1>Bootstrap starter template</h1>
+      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div>
+  {% endblock %}
+</div><!-- /.container -->
+{% block javascript %}
+  <script src="javascripts/app.js"></script>
+{% endblock %}
+</body>
+</html>
