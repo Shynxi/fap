@@ -1,4 +1,4 @@
-<div class="card row">
+<div class="row card-layout-horizontal">
     <div class="col-sm-12 col-md-6">
     {% if module.image %}
         <img class="card-img-top layout-horizontal" src="{{ module.image.src }}" alt="{{ module.image.alt }}">
@@ -13,7 +13,7 @@
                 <p class="card-text">{{ module.text }}</p>
             {% endif %}
             {% if module.cta %}
-                <a href="#" class="btn btn-primary">{{ module.cta }}</a>
+                <a href="{{ module.cta.link }}" class="btn btn-primary">{{ module.cta.text }}</a>
             {% endif %}
         </div>
     </div>
