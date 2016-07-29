@@ -27,9 +27,6 @@
     "bowerFiles": {},
 
     "js": {
-      "moduleAlias": {
-        "jquery": "./../../vendor/jquery/dist/jquery"
-      },
       "src": "javascripts",
       "dest": "javascripts",
       "entries": {

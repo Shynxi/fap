@@ -5,6 +5,7 @@ var path            = require('path')
 var pathToUrl       = require('./pathToUrl')
 var webpack         = require('webpack')
 var webpackManifest = require('./webpackManifest')
+var BowerWebpackPlugin = require("bower-webpack-plugin");
 
 module.exports = function(env) {
   var jsSrc = path.resolve(config.root.src, config.tasks.js.src)
@@ -22,15 +23,23 @@ module.exports = function(env) {
     context: jsSrc,
     plugins: [
       new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "window.jQuery": "jquery"
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery',
+        "Tether": 'tether',
+        "window.Tether": "tether"
+      }),
+      new BowerWebpackPlugin({
+        modulesDirectories: ["bower_components"],
+        manifestFiles:      "bower.json",
+        includes:           /.*/,
+        excludes:           [],
+        searchResolveModulesDirectories: true
       })
     ],
     resolve: {
       root: jsSrc,
       extensions: [''].concat(extensions),
-      alias: config.tasks.js.moduleAlias
     },
     module: {
       loaders: [
@@ -40,8 +49,17 @@ module.exports = function(env) {
           exclude: /node_modules/,
           query: config.tasks.js.babel,
         },
-        { test: /vendor\/.+\.(jsx|js)$/,
-          loader: 'imports?jQuery=jquery,$=jquery,this=>window'
+        {
+          test:   /\.css$/,
+          loader: "style-loader!css-loader"
+        },
+        {
+          test: /\.scss$/,
+          loaders: ["style", "css", "sass"]
+        },
+        {
+          test: /bootstrap\/dist\/js\/umd\//,
+          loader: 'imports?jQuery=jquery'
         }
       ],
       noParse: [
