@@ -1,6 +1,20 @@
-# ![Gulp Starter](extras/demo/src/images/gulp-starter-logo.png)
+# Heavily modified Version of Gulp Starter
+## Bower/Webpack Integration
+Any Bower Package can be integrated via 
+```
+require('packagename')
+```
+By default, packages "main" files will be used. Can be modified in projects bower.json in the overrides-section
+## Bootstrap
+Bootstrap is included by default as npm package.
 
-[![Build Status](https://travis-ci.org/vigetlabs/gulp-starter.svg?branch=static-server)](https://travis-ci.org/vigetlabs/gulp-starter)
+To remove, delete it from package.json
+
+Bootstrap Variables can be overriden in ./src/stylesheets/bs-overrides.scss
+
+
+
+# ![Gulp Starter](extras/demo/src/images/gulp-starter-logo.png)
 
 Gulp Starter is a delicious blend of tasks and build tools poured into [Gulp](http://gulpjs.com/) to form a full-featured modern asset pipeline. It can be used as-is as a static site builder, or can be configured and integrated into your own development environment and site or app structure. The [extras](./extras) folder contains configuration details for Rails and Craft, with more to follow. [Check out the compiled demo](http://vigetlabs.github.io/gulp-starter/) and play with [the source files](extras/demo)!
 
@@ -146,25 +160,6 @@ GitHub Pages isn't the most robust of hosting solutions (you'll eventually run i
 [Surge.sh](http://surge.sh/) might be a good alternative for production-ready static hosting to check out, and is just as easy to deploy to. Where ever you're deploying to, all you need to do is `npm run gulp production` and transfer the contents of the `public` folder to your server however you see fit.
 
 For non-static sites (Rails, Craft, etc.), make sure the `production` task runs as part of your deploy process.
-
-## Notable changes from 1.0
-- Full asset pipeline and static html compilation
-- `gulpfile.js` is now a directory
-- update directory structure
-- Replaced Browserify with [Webpack](http://webpack.github.io/docs/webpack-for-browserify-users.html)!
-  - Async CommonJS module requires
-  - Automatically splits out shared dependencies
-- New `html` task w/ Nunjucks templating/compiling
-- Replace CoffeeScript with ES6 ([Babel.js](http://babeljs.io/))
-- New `server` task to test production files locally
-- New `deploy` task to deploy the public directory to gh-pages
-- New `rev` task that revisions filenames and compress css and js
-- Use `gulp-watch` instead of `gulp.watch` (correctly handles new files)
-- New `production` task runs tests, compression + filename revisioning
-- Remove old examples and extraneous dependencies
-- Upgrades dependencies
-- Added example Travis CI integration that runs karma tests and production build
-- Add SVG sprite implementation from @synapticism in #100
 
 Original Blog Post: https://www.viget.com/articles/gulp-browserify-starter-faq
 
