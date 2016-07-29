@@ -27,7 +27,8 @@ module.exports = function(env) {
         $: 'jquery',
         jquery: 'jquery',
         "Tether": 'tether',
-        "window.Tether": "tether"
+        "window.Tether": "tether",
+        _: 'lodash',
       }),
       new BowerWebpackPlugin({
         modulesDirectories: ["bower_components"],
@@ -35,11 +36,15 @@ module.exports = function(env) {
         includes:           /.*/,
         excludes:           [],
         searchResolveModulesDirectories: true
-      })
+      }),
+      new webpack.ResolverPlugin(
+          new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
+      )
     ],
     resolve: {
       root: jsSrc,
       extensions: [''].concat(extensions),
+      modulesDirectories: ["web_modules", "node_modules", "bower_components"]
     },
     module: {
       loaders: [
@@ -55,11 +60,11 @@ module.exports = function(env) {
         },
         {
           test: /\.scss$/,
-          loaders: ["style", "css", "sass"]
+          loaders: ["style", "css", "resolve-url", "sass"]
         },
         {
           test: /\.sass$/,
-          loaders: ["style", "css", "sass"]
+          loaders: ["style", "css", "resolve-url", "sass"]
         },
         {
           test: /bootstrap\/dist\/js\/umd\//,

@@ -1,6 +1,6 @@
 import './modules'
 //load bootstrap
-require('bootstrap')
+require('bootstrap-loader');
 //load styles
 require('./../stylesheets/app.sass')
 $(function () {

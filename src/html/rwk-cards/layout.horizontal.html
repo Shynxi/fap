@@ -1,0 +1,20 @@
+<div class="card row">
+    <div class="col-sm-12 col-md-6">
+    {% if module.image %}
+        <img class="card-img-top layout-horizontal" src="{{ module.image.src }}" alt="{{ module.image.alt }}">
+    {% endif %}
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <div class="card-block{% if module.category %} card-category-{{ module.category }}{% endif %}">
+            {% if module.title %}
+                <h4 class="card-title">{{ module.title }}</h4>
+            {% endif %}
+            {% if module.text %}
+                <p class="card-text">{{ module.text }}</p>
+            {% endif %}
+            {% if module.cta %}
+                <a href="#" class="btn btn-primary">{{ module.cta }}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

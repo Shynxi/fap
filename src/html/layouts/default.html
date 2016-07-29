@@ -35,14 +35,14 @@
     {% endblock metaNavigation %}
   </nav>
 </header>
-<div class="container">
-  {% block main %}
-    <div class="page">
+<div class="page">
+  <div class="container">
+    {% block main %}
       <h1>Bootstrap starter template</h1>
       <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-    </div>
-  {% endblock %}
-</div><!-- /.container -->
+    {% endblock %}
+  </div>
+</div>
 {% block javascript %}
   <script src="javascripts/app.js"></script>
 {% endblock %}

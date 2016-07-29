@@ -1,5 +1,6 @@
+{% set curMod = module %}
 <div class="rwk-card-grid row">
-    {% for card in module.items %}
+    {% for card in curMod.items %}
         {% if card.size == "md" %}
             {% set cardClass = "col-sm-12 col-md-6" %}
         {% elif card.size == "lg" %}
@@ -8,11 +9,10 @@
             {% set cardClass = "col-sm-6 col-md-3" %}
         {% endif %}
         <div class="{{ cardClass }}">
-            <div class="card card-block">
-                <h3 class="card-title">{{ card.title }}</h3>
-                <p class="card-text">{{ card.text }}</p>
-                <a href="#" class="btn btn-primary">{{ card.cta }}</a>
-            </div>
+            {% set tmp = curMod %}
+            {% set module = card %}
+            {% include "rwk-cards/layout."+card.layout+".html" %}
+            {% set module = tmp %}
         </div>
     {% endfor %}
 </div>
