@@ -4,7 +4,7 @@
     "dest": "./public"
   },
 
-  "assetTasks": ["bowerFiles", "fonts", "iconFont", "images", "svgSprite"],
+  "assetTasks": ["fonts", "iconFont", "images", "svgSprite"],
   "codeTasks": ["html", "css", "js"],
 
   "tasks": {
