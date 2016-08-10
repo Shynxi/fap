@@ -32,7 +32,7 @@ module.exports = function(env) {
       }),
       new BowerWebpackPlugin({
         modulesDirectories: ["bower_components"],
-        manifestFiles:      "bower.json",
+        manifestFiles:      ["bower.json",".bower.json"],
         includes:           /.*/,
         excludes:           [],
         searchResolveModulesDirectories: true
@@ -69,6 +69,19 @@ module.exports = function(env) {
         {
           test: /bootstrap\/dist\/js\/umd\//,
           loader: 'imports?jQuery=jquery'
+        },
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          ]
+        },
+        {
+          test: /\.(webm|mp4|pdf)$/i,
+          loaders: [
+            'file'
+          ]
         }
       ],
       noParse: [

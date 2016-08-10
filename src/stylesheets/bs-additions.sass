@@ -1,0 +1,21 @@
+@import variables
+@import ../../node_modules/bootstrap/scss/variables
+@import ../../node_modules/bootstrap/scss/mixins
+
+// New 5 Column Breakpoint
+@each $breakpoint in map-keys($grid-breakpoints)
+  .col-#{$breakpoint}-cstm-5
+    position: relative
+    min-height: 1px
+    padding-left: $grid-gutter-width / 2
+    padding-right: $grid-gutter-width / 2
+  @include media-breakpoint-up($breakpoint)
+    .col-#{$breakpoint}-cstm-5
+      flex: 0 0 20%
+//nowrap class to prevent columns from breaking
+.row.nowrap
+  flex-wrap: nowrap
+// hidden class
+.hidden
+  display: none
+  visibility: hidden
