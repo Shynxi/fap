@@ -1,10 +1,11 @@
 {
   "root": {
     "src": "./src",
-    "dest": "./public"
+    "dest": "./public",
+    "lightmodule": "./lightmodules/rewe-karriere/webresources"
   },
 
-  "assetTasks": ["fonts", "iconFont", "images", "svgSprite"],
+  "assetTasks": ["fonts", "iconFont", "images", "svgSprite", "media"],
   "codeTasks": ["html", "css", "js"],
 
   "tasks": {
@@ -17,6 +18,11 @@
     "static": {
       "src": "static",
       "dest": "./"
+    },
+
+    "media": {
+      "src": "media",
+      "dest": "media"
     },
 
     "bower": {
@@ -63,7 +69,7 @@
         "collapseWhitespace": true
       },
       "extensions": ["html", "json"],
-      "excludeFolders": ["layouts", "shared", "macros", "data"]
+      "excludeFolders": ["layouts", "shared", "macros", "data", "content", "nws-*", "rwk-*"]
     },
 
     "images": {
@@ -92,7 +98,7 @@
     },
 
     "production" : {
-      "rev": true
+      "rev": false
     }
   }
 }
