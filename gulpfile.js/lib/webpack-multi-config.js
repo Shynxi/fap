@@ -36,15 +36,11 @@ module.exports = function(env) {
         includes:           /.*/,
         excludes:           [],
         searchResolveModulesDirectories: true
-      }),
-      new webpack.ResolverPlugin(
-          new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-      )
+      })
     ],
     resolve: {
-      root: jsSrc,
-      extensions: [''].concat(extensions),
-      modulesDirectories: ["web_modules", "node_modules", "bower_components"]
+      extensions: extensions,
+      modules: ["web_modules", "node_modules", "bower_components"]
     },
     module: {
       loaders: [
