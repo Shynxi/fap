@@ -39,8 +39,8 @@ module.exports = function(env) {
       })
     ],
     resolve: {
-      extensions: extensions,
-      modules: ["web_modules", "node_modules", "bower_components"]
+      extensions: ["*"].concat(extensions),
+      modules: [jsSrc, "node_modules", "web_modules", "bower_components"]
     },
     module: {
       loaders: [
