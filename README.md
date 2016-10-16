@@ -1,4 +1,55 @@
 # Heavily modified Version of Gulp Starter
+
+## Basisinstallation
+Um das Projekt bauen zu können, werden folgende Programme benötigt.
+
+###NodeJS 
+```
+Installer von https://nodejs.org/
+```
+
+###npm installatieren/ aktualisieren
+```bash
+npm install -g npm
+```
+
+###python (v2.7.x)
+```
+> Installer von https://www.python.org/
+```
+
+##Cleanup: Um den modules-Ordner zu löschen
+Bei Windows kann es bei zu langen Dateinamen zu Problemen kommen. Dabei hilft ein Nodejs Modul "rimraf".
+Installation (https://www.npmjs.com/package/rimraf)
+```bash
+npm install rimraf -g
+```
+
+Starten (ohne Sicherheitsfrage ist dann rekursiv alles Weg)	
+```bash
+rimraf <path>
+```
+```bash
+rimraf node_modules
+```
+
+## Projekt laufen lassen
+Einmalig	
+```
+npm install
+```
+
+Für die Entwicklung (mit autoreload bei Resourcenänderungen)
+```bash
+npm run development
+```
+
+Für die Vorbereitung der Produktion
+```bash
+npm run production
+```
+
+
 ## Bower/Webpack Integration
 Any Bower Package can be integrated via 
 ```
@@ -11,6 +62,25 @@ Bootstrap is included by default as npm package.
 To remove, delete it from package.json
 
 Bootstrap Variables can be overriden in ./src/stylesheets/bs-overrides.scss
+
+## Modernizr
+Modernizr is included by default as npm package
+
+To remove, delete it from package.json
+
+You can set which parts of Modernizr to include by editing .modernizrrc
+
+A list of possible options can be found here: https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json
+
+## Magnolia Light Module
+To add assets (js, css, fonts, images) to lightmodule, run
+```
+npm run lightmodule
+```
+*Lightmodule folder name has to be specified in "gulpfile.js/config.json" for the root object!!*
+
+
+####
 
 
 
@@ -170,3 +240,16 @@ Original Blog Post: https://www.viget.com/articles/gulp-browserify-starter-faq
 </a>
 
 Visit [code.viget.com](http://code.viget.com) to see more projects from [Viget.](https://viget.com)
+
+
+
+## Project specials
+
+### SPA Navigation
+
+    Diese wird dynamisch erzeugt und benötigt die Attribute "data-spa-navi-id" und "data-spa-navi-title". Erzeugt wird diese durch clonen des Elements mit dem Attribut "data-spa-navi-element".
+Der Aufbau erfolgt in der app.js nach DOM Ready.
+Beispiel
+```
+   id="{{ module.id }}" data-spa-navi-title="{{ module.headline }}" data-spa-navi-id="{{ module.id }}"
+```

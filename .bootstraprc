@@ -12,6 +12,7 @@ useFlexbox: true
 styleLoaders:
   - style
   - css
+  - postcss
   - sass
 
 # Extract styles to stand-alone css file
@@ -38,13 +39,13 @@ extractStyles: false
 # Thus, you may customize Bootstrap variables
 # based on the values established in the Bootstrap _variables.scss file
 #
-bootstrapCustomizations: ./src/stylesheets/bs-overrides.scss
+bootstrapCustomizations: ./src/stylesheets/bs-overrides.sass
 
 
 # Import your custom styles here
 # Usually this endpoint-file contains list of @imports of your application styles
 #
-# appStyles: ./path/to/your/app/styles/endpoint.scss
+appStyles: ./src/stylesheets/bs-additions.sass
 
 
 ### Bootstrap styles
@@ -78,8 +79,6 @@ styles:
   card: true
   breadcrumb: true
   pagination: true
-  pager: true
-  labels: true
   jumbotron: true
   alert: true
   progress: true
@@ -87,6 +86,7 @@ styles:
   list-group: true
   responsive-embed: true
   close: true
+  tags: true
 
   # Components w/ JavaScript
   modal: true
@@ -96,9 +96,6 @@ styles:
 
   # Utility classes
   utilities: true
-  utilities-background: true
-  utilities-spacing: true
-  utilities-responsive: true
 
 ### Bootstrap scripts
 scripts:
