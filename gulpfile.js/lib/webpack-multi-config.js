@@ -21,26 +21,6 @@ module.exports = function(env) {
 
   var webpackConfig = {
     context: jsSrc,
-    plugins: [
-      new webpack.ProvidePlugin({
-        jQuery: 'jquery',
-        $: 'jquery',
-        jquery: 'jquery',
-        "Tether": 'tether',
-        "window.Tether": "tether",
-        _: 'lodash',
-      }),
-      new BowerWebpackPlugin({
-        modulesDirectories: ["bower_components"],
-        manifestFiles:      ["bower.json",".bower.json"],
-        includes:           /.*/,
-        excludes:           [],
-        searchResolveModulesDirectories: true
-      }),
-      new webpack.ResolverPlugin(
-          new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
-      )
-    ],
     resolve: {
       root: jsSrc,
       extensions: [''].concat(extensions),
@@ -67,7 +47,7 @@ module.exports = function(env) {
           loaders: ["style", "css", "resolve-url", "sass"]
         },
         {
-          test: /bootstrap\/js\/dist\//,
+          test: /bootstrap\/dist\/js\/umd\//,
           loader: 'imports?jQuery=jquery'
         },
         {
@@ -93,7 +73,37 @@ module.exports = function(env) {
       noParse: [
         /[\/\\]node_modules[\/\\]angular[\/\\]angular\.js$/
       ]
-    }
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        Tether: 'tether',
+        "window.Tether": "tether",
+        _: 'lodash',
+        Tooltip: "exports?Tooltip!bootstrap/js/dist/tooltip",
+        alert: "exports?alert!bootstrap/js/dist/alert",
+        button: "exports?Button!bootstrap/js/dist/button",
+        Carousel: "exports?Carousel!bootstrap/js/dist/carousel",
+        Collapse: "exports?Collapse!bootstrap/js/dist/collapse",
+        Dropdown: "exports?Dropdown!bootstrap/js/dist/dropdown",
+        Modal: "exports?Modal!bootstrap/js/dist/modal",
+        Popover: "exports?Popover!bootstrap/js/dist/popover",
+        Scrollspy: "exports?Scrollspy!bootstrap/js/dist/scrollspy",
+        Tab: "exports?Tab!bootstrap/js/dist/tab",
+        Util: "exports?Util!bootstrap/js/dist/util"
+      }),
+      new BowerWebpackPlugin({
+        modulesDirectories: ["bower_components"],
+        manifestFiles:      ["bower.json",".bower.json"],
+        includes:           /.*/,
+        excludes:           [],
+        searchResolveModulesDirectories: true
+      }),
+      new webpack.ResolverPlugin(
+        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
+      )
+    ],
   }
 
   if(env === 'development') {
