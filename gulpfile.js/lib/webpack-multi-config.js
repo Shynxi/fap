@@ -47,6 +47,12 @@ module.exports = function(env) {
       modulesDirectories: ["web_modules", "node_modules", "bower_components"]
     },
     module: {
+      preLoaders: [
+        {
+          test: /\/webcomponents\/.+\.js$/,
+          loader: `polymer-loader?templateExtension=${config.tasks.webcomponents.templateExtension}&styleExtension=${config.tasks.webcomponents.styleExtension}`
+        }
+      ],
       loaders: [
         {
           test: /\.js$/,

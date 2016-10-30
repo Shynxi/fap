@@ -32,6 +32,12 @@
 
     "bowerFiles": {},
 
+    "webcomponents": {
+      "src": "webcomponents",
+      "templateExtension": "html",
+      "styleExtension": "sass"
+    },
+
     "js": {
       "src": "javascripts",
       "dest": "javascripts",
