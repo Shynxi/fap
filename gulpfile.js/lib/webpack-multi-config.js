@@ -67,7 +67,7 @@ module.exports = function(env) {
           loaders: ["style", "css", "resolve-url", "sass"]
         },
         {
-          test: /bootstrap\/dist\/js\/umd\//,
+          test: /bootstrap\/js\/dist\//,
           loader: 'imports?jQuery=jquery'
         },
         {
