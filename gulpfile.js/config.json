@@ -34,6 +34,7 @@
 
     "webcomponents": {
       "src": "webcomponents",
+      "dest": "webcomponents",
       "templateExtension": "html",
       "styleExtension": "sass",
       "extensions": ["js", "html", "css", "sass", "scss", "jade", "pug"]
