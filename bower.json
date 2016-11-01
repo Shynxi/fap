@@ -10,7 +10,13 @@
   ],
   "dependencies": {
     "jquery": "~3.1.0",
-    "polymer": "git://github.com/Polymer/polymer.git#2.0-preview"
+    "iron-elements": "PolymerElements/iron-elements#^1.0.10",
+    "neon-elements": "PolymerElements/neon-elements#^1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7",
+    "platinum-elements": "PolymerElements/platinum-elements#^2.0.0",
+    "gold-elements": "PolymerElements/gold-elements#^1.0.1",
+    "polymer": "Polymer/polymer#2.0-preview",
+    "webcomponentsjs": "^0.7.22"
   },
   "private": true,
   "overrides": {
@@ -20,5 +26,9 @@
         "./dist/js/bootstrap.js"
       ]
     }
+  },
+  "resolutions": {
+    "webcomponentsjs": "v1",
+    "polymer": "2.0-preview"
   }
 }

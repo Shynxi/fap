@@ -1,0 +1,97 @@
+{% from 'macros/helpers.html' import sprite %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="{% block title %}{{ title }}{% endblock %}">
+    {% include "shared/app-icons.html" %}
+    {% block head %}{% endblock %}
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+
+    <!-- Chrome for Android theme color -->
+    <meta name="theme-color" content="#2E3AA1">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Tile color for Win8 -->
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="PSK">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="{% block title %}{{ title }}{% endblock %}">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+    <!-- build:js bower_components/webcomponentsjs/webcomponents.js -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- endbuild -->
+
+    <link rel="import" href="elements/elements.html">
+
+    <!-- For shared styles, shared-styles.html import in elements.html -->
+    <style is="custom-style" include="shared-styles">
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body unresolved>
+<!-- build:remove -->
+<span id="browser-sync-binding"></span>
+<!-- endbuild -->
+
+<template is="dom-bind" id="app">
+    {% block main %}
+        <paper-material elevation="1" class="outer-wrapper">
+
+            <maxg-gewinnspiel-form
+                    header-image="../../images/header_grafik.jpg"
+                    datenschutz-link="1.html"
+                    teilnahme-link="2.html"
+            ></maxg-gewinnspiel-form>
+            <div style="clear: both;"></div>
+        </paper-material>
+
+        <paper-toast id="toast">
+            <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+        </paper-toast>
+
+        <paper-toast id="caching-complete"
+                     duration="6000"
+                     text="Caching complete! This app will work offline.">
+        </paper-toast>
+
+        <!--
+        <platinum-sw-register auto-register
+                              clients-claim
+                              skip-waiting
+                              base-uri="bower_components/platinum-sw/bootstrap"
+                              on-service-worker-installed="displayInstalledToast">
+          <platinum-sw-cache default-cache-strategy="fastest"
+                             cache-config-file="cache-config.json">
+          </platinum-sw-cache>
+        </platinum-sw-register>-->
+    {% endblock %}
+</template>
+
+<!-- build:js scripts/app.js -->
+{% block javascript %}
+    <script src="javascripts/app.js"></script>
+{% endblock %}
+<!-- endbuild-->
+</body>
+
+</html>
