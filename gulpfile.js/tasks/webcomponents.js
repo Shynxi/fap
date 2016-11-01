@@ -17,6 +17,8 @@ var webcomponentsTask = function() {
         .pipe(vulcanize({
             abspath: '',
             excludes: [],
+            inlineScripts: true,
+            inlineCss: true,
             stripExcludes: false
         }))
         .pipe(changed(paths.dest)) // Ignore unchanged files
