@@ -6,7 +6,7 @@
   },
 
   "assetTasks": ["fonts", "iconFont", "images", "svgSprite", "media"],
-  "codeTasks": ["html", "css", "js"],
+  "codeTasks": ["html", "css", "js", "webcomponents"],
 
   "tasks": {
     "browserSync": {
