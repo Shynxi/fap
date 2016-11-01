@@ -45,7 +45,7 @@
       "src": "javascripts",
       "dest": "javascripts",
       "entries": {
-        "app": ["./app.js"]
+        "app": ["./app"]
       },
       "extensions": ["js", "json"],
       "babel": {

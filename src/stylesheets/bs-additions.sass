@@ -7,8 +7,8 @@
   .col-#{$breakpoint}-cstm-5
     position: relative
     min-height: 1px
-    padding-left: $grid-gutter-width / 2
-    padding-right: $grid-gutter-width / 2
+    padding-left: #{map-get($grid-gutter-widths, $breakpoint)} / 2
+    padding-right: #{map-get($grid-gutter-widths, $breakpoint)} / 2
   @include media-breakpoint-up($breakpoint)
     .col-#{$breakpoint}-cstm-5
       flex: 0 0 20%

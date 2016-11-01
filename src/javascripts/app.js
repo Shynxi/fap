@@ -9,8 +9,6 @@ __webpack_public_path__ = scriptPath.substring(0, scriptPath.lastIndexOf("/") + 
 import './modules'
 //load bootstrap
 require('bootstrap-loader');
-//load styles
-require('./../stylesheets/app.sass')
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
