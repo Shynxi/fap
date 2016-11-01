@@ -22,7 +22,8 @@
 
     "media": {
       "src": "media",
-      "dest": "media"
+      "dest": "media",
+      "extensions": [""]
     },
 
     "bower": {
