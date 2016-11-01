@@ -14,14 +14,15 @@ var paths = {
 
 var webcomponentsTask = function() {
     return gulp.src(paths.src)
+        .pipe(changed(paths.dest)) // Ignore unchanged files
         .pipe(vulcanize({
             abspath: '',
             excludes: [],
+            stripComments: true,
             inlineScripts: true,
             inlineCss: true,
             stripExcludes: false
         }))
-        .pipe(changed(paths.dest)) // Ignore unchanged files
         .pipe(gulp.dest(paths.dest))
 }
 

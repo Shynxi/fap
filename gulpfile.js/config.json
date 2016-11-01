@@ -45,7 +45,8 @@
       "src": "javascripts",
       "dest": "javascripts",
       "entries": {
-        "app": ["./app"]
+        "app": ["./app.js"],
+        "webcomponents": ["./webcomponents.js"]
       },
       "extensions": ["js", "json"],
       "babel": {

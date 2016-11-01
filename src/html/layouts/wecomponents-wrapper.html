@@ -34,10 +34,6 @@
     <!-- Tile icon for Win8 (144x144) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
 
-    <!-- build:js bower_components/webcomponentsjs/webcomponents.js -->
-    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <!-- endbuild -->
-
     <link rel="import" href="webcomponents/elements.html">
 
     <!-- For shared styles, shared-styles.html import in elements.html -->
@@ -79,6 +75,7 @@
 
 <!-- build:js scripts/app.js -->
 {% block javascript %}
+    <script src="javascripts/webcomponents.js"></script>
     <script src="javascripts/app.js"></script>
 {% endblock %}
 <!-- endbuild-->
