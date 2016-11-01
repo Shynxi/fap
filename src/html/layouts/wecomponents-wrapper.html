@@ -49,36 +49,13 @@
 <span id="browser-sync-binding"></span>
 <!-- endbuild -->
 
-<template is="dom-bind" id="app" data-module="polymer-example">
-    {% block main %}
-        <paper-material elevation="1" class="outer-wrapper">
-            <p>Hello World</p>
-        </paper-material>
+{% block main %}{% endblock %}
 
-        <paper-toast id="caching-complete"
-                     duration="6000"
-                     text="Caching complete! This app will work offline.">
-        </paper-toast>
 
-        <!--
-        <platinum-sw-register auto-register
-                              clients-claim
-                              skip-waiting
-                              base-uri="bower_components/platinum-sw/bootstrap"
-                              on-service-worker-installed="displayInstalledToast">
-          <platinum-sw-cache default-cache-strategy="fastest"
-                             cache-config-file="cache-config.json">
-          </platinum-sw-cache>
-        </platinum-sw-register>-->
-    {% endblock %}
-</template>
-
-<!-- build:js scripts/app.js -->
+<script src="javascripts/webcomponents.js"></script>
 {% block javascript %}
-    <script src="javascripts/webcomponents.js"></script>
     <script src="javascripts/app.js"></script>
 {% endblock %}
-<!-- endbuild-->
 </body>
 
 </html>

@@ -1,0 +1,23 @@
+<dom-module id="app">
+    <template>
+        <style include="shared-styles">
+        </style>
+
+        <iron-localstorage id="localStorage" name="{$ config.appNameId $}"
+                           value="{{storage}}"
+                           on-iron-localstorage-load-empty="initializeDefaultStorage">
+        </iron-localstorage>
+
+        <paper-drawer-panel id="paperDrawerPanel" responsive-width="840px" drawer-width="256px">
+            {% include "my-app/views/drawer.html" %}
+            {% include "my-app/views/main.html" %}
+        </paper-drawer-panel>
+
+        <paper-toast id="confirmToast" class="Toast" duration="10000">
+            <span class="Toast-button" role="button" tabindex="0" on-tap="onConfirmToastTap">OK</span>
+        </paper-toast>
+
+        <paper-toast id="infoToast" class="Toast" duration="8000"></paper-toast>
+    </template>
+    <script src="index.js"></script>
+</dom-module>
