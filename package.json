@@ -62,7 +62,7 @@
     "gulp-sequence": "^0.4.6",
     "gulp-sizereport": "^1.2.0",
     "gulp-sourcemaps": "^2.1.1",
-    "gulp-style-modules": "^0.1.0",
+    "gulp-style-modules": "https://github.com/tobilen/gulp-style-modules.git#html-import",
     "gulp-svgstore": "^6.0.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
