@@ -36,11 +36,14 @@
     "webcomponents": {
       "src": "webcomponents",
       "dest": "webcomponents",
-      "templateExtension": "html",
-      "extensions": ["html", "jade", "pug"]
+      "extensions": ["html"]
     },
 
-    "stylemod": {},
+    "stylemod": {
+      "src": "webcomponents",
+      "dest": "webcomponents",
+      "extensions": ["css", "sass", "scss"]
+    },
 
     "js": {
       "src": "javascripts",

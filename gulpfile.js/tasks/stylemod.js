@@ -32,19 +32,22 @@ var stylemodTask = function () {
   .pipe(gulpif(!global.production, sourcemaps.write()))
   .pipe(stylemod({
     filename: function(file) {
-      //unique component name is name of last folder
+      //component name is name of last folder
       var componentName = path.dirname(file.path).split(path.sep).pop()
       return componentName + "-" + path.basename(file.path, path.extname(file.path));
     },
     moduleId: function (file) {
-      //unique component name is name of last folder
+      //component name is name of last folder
       var componentName = path.dirname(file.path).split(path.sep).pop()
       return componentName + "-" + path.basename(file.path, path.extname(file.path));
-    }
+    },
+    cwd: `${config.root.dest}`,
+    basePath: `${config.tasks.webcomponents.dest}`,
+    includeFile: `style-modules.html`
   }))
   .pipe(gulp.dest(paths.dest))
   .pipe(browserSync.stream())
 }
 
-gulp.task('stylemod', stylemodTask)
+gulp.task('stylemod', ['webcomponents'], stylemodTask)
 module.exports = stylemodTask

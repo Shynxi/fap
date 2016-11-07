@@ -1,7 +1,5 @@
-:host()
-  color: #fff
-p
-  color: #fff
+body
+  font-family: 'Roboto', Arial, sans-serif
 .page-title
   --paper-font-display2
     text-align: center
@@ -10,7 +8,8 @@ p
   padding: 10px 0
   text-align: center
 
-.infotext, .page-title
+.infotext,
+.page-title
   color: #FC5701
   line-height: 25px
   font-weight: bold
@@ -30,10 +29,11 @@ paper-button
     background: #FC5701
     padding: 10px 25px
 
-paper-menu a > *,
-paper-menu paper-item > *,
-paper-menu paper-icon-item > *
-  pointer-events: none
+paper-menu a,
+paper-menu paper-item,
+paper-menu paper-icon-item
+  > *
+    pointer-events: none
 
 a
   color: #FC5701

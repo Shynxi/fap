@@ -18,13 +18,14 @@ paths.src.push(path.join('!' + config.root.src, config.tasks.webcomponents.src, 
 
 var webcomponentsTask = function () {
   return gulp.src(paths.src)
+  .pipe(changed(paths.dest)) // Ignore unchanged files
   .pipe(vulcanize({
     abspath: '',
     excludes: [],
     stripComments: true,
     inlineScripts: true,
     inlineCss: true,
-    stripExcludes: false
+    addedImports: [],
   }))
   .on('error', handleErrors)
   .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
