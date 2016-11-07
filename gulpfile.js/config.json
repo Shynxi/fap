@@ -36,7 +36,7 @@
     "webcomponents": {
       "src": "webcomponents",
       "dest": "webcomponents",
-      "extensions": ["html"]
+      "extensions": ["html", "js"]
     },
 
     "stylemod": {
