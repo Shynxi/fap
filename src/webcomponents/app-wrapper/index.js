@@ -9,7 +9,7 @@
  */
 
 /* global Polymer */
-
+require("./template.html")
 class AppWrapper {
   beforeRegister() {
     this.is = 'app-wrapper'
