@@ -13,12 +13,13 @@ var cssnano      = require('gulp-cssnano')
 
 
 var paths = {
-  src: [
-    path.join(config.root.src, config.tasks.webcomponents.src, '/**/*.sass'),
-    path.join('!' + config.root.src, config.tasks.webcomponents.src, '/README.md')
-  ],
+  src: [],
   dest: path.join(config.root.dest, config.tasks.webcomponents.dest)
 }
+config.tasks.css.extensions.forEach(function(val) {
+  paths.src.push(path.join(config.root.src, config.tasks.webcomponents.src, '/**/*.'+val))
+})
+paths.src.push(path.join('!' + config.root.src, config.tasks.webcomponents.src, '/README.md'))
 
 
 var stylemodTask = function () {
