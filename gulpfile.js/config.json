@@ -6,7 +6,7 @@
   },
 
   "assetTasks": ["fonts", "iconFont", "images", "svgSprite", "media"],
-  "codeTasks": ["html", "css", "js", "webcomponents"],
+  "codeTasks": ["html", "css", "js", "webcomponents", "stylemod"],
 
   "tasks": {
     "browserSync": {
@@ -40,6 +40,8 @@
       "styleExtension": "sass",
       "extensions": ["js", "html", "css", "sass", "scss", "jade", "pug"]
     },
+
+    "stylemod": {},
 
     "js": {
       "src": "javascripts",
