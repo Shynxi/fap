@@ -1,0 +1,69 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-styles/typography.html">
+
+<!-- shared styles for all elements and index.html -->
+<dom-module id="shared-styles">
+    <template>
+        <style>
+            :host {
+                color: #fff;
+            }
+            p {
+                color: #fff;
+            }
+            .page-title {
+                @apply(--paper-font-display2);
+                text-align: center;
+                margin: 10px 0;
+            }
+            .infotext {
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            .infotext, .page-title{
+                color: #FC5701;
+                line-height: 25px;
+                font-weight:bold;
+            }
+            .infotext p{
+                color: #FC5701;
+                line-height: 25px;
+                font-weight:bold;
+            }
+
+            .app-menu {
+                --paper-menu-selected-item: {
+                    color: #fff;
+                    background: var(--light-primary-color);
+                }
+            }
+            .hidden {
+                display: none;
+            }
+
+            paper-button.primary {
+                background: #FC5701;
+                padding: 10px 25px;
+            }
+
+            paper-menu a > *, paper-menu paper-item > *, paper-menu paper-icon-item > * {
+                pointer-events: none;
+            }
+
+            a {
+                color: #FC5701;
+                text-decoration: none;
+            }
+            a:hover, a:focus, a:active, a:visited {
+                text-decoration: underline;
+            }
+
+            @media (max-width: 600px) {
+                .page-title {
+                    font-size: 24px!important;
+                }
+            }
+        </style>
+    </template>
+</dom-module>
