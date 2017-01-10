@@ -70,7 +70,6 @@ styles:
 
   # Components
   alert: true
-  animation: true
   breadcrumb: true
   button-group: true
   card: true
