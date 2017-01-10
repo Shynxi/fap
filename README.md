@@ -77,7 +77,7 @@ To add assets (js, css, fonts, images) to lightmodule, run
 ```
 npm run lightmodule
 ```
-*Lightmodule folder name has to be specified in "gulpfile.js/config.json" for the root object!!*
+*Lightmodule folder name has to be specified in "gulpfile/config.json" for the root object!!*
 
 
 ####
@@ -160,13 +160,13 @@ git commit -m "Initialized with Gulp Starter"
 ```
 
 ## Configuration
-Directory and top level settings are convienently exposed in `gulpfile.js/config.json`. Use this file to update paths to match the directory structure of your project, and to adjust task options.
+Directory and top level settings are convienently exposed in `gulpfile/config.json`. Use this file to update paths to match the directory structure of your project, and to adjust task options.
 
 All task configuration objects have `src` and `dest` directories specfied. These are relative to `root.src` and `root.dest` respectively. Each configuration also has an extensions array. This is used for file watching, and file deleting/replacing.
 
 **If there is a feature you do not wish to use on your project, simply delete the configuration, and the task will be skipped.**
 
-Not all configuration is exposed here. For advanced task configuration, you can always edit the tasks themselves in `gulpfile.js/tasks`.
+Not all configuration is exposed here. For advanced task configuration, you can always edit the tasks themselves in `gulpfile/tasks`.
 
 ### Start compiling, serving, and watching files
 ```
@@ -175,7 +175,7 @@ npm run gulp
 
 (or `npm run development`)
 
-This runs `gulp` from `./node_modules/bin`, using the version installed with this project, rather than a globally installed instance. All commands in the package.json `scripts` work this way. The `gulp` command runs the `default` task, defined in `gulpfile.js/tasks/default.js`.
+This runs `gulp` from `./node_modules/bin`, using the version installed with this project, rather than a globally installed instance. All commands in the package.json `scripts` work this way. The `gulp` command runs the `default` task, defined in `gulpfile/tasks/default.js`.
 
 All files will compile in development mode (uncompressed with source maps). [BrowserSync](http://www.browsersync.io/) will serve up files to `localhost:3000` and will stream live changes to the code and assets to all connected browsers. Don't forget about the additional BrowserSync tools available on `localhost:3001`!
 

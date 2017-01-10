@@ -17,7 +17,7 @@ var settings = {
   src: path.join(config.root.src, config.tasks.iconFont.src, '/*.svg'),
   dest: path.join(config.root.dest, config.tasks.iconFont.dest),
   sassDest: path.join(config.root.src, config.tasks.css.src, config.tasks.iconFont.sassDest),
-  template: path.normalize('./gulpfile.js/tasks/iconFont/template.sass'),
+  template: path.normalize('./gulpfile/tasks/iconFont/template.sass'),
   sassOutputName: '_icons.sass',
   fontPath: url.resolve('.',path.relative(cssPath, fontPath)),
   className: 'icon',

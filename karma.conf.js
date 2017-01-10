@@ -1,6 +1,6 @@
-var config        = require('./gulpfile.js/config')
+var config        = require('./gulpfile/config')
 var karmaWebpack  = require('karma-webpack')
-var webpackConfig = require('./gulpfile.js/lib/webpack-multi-config')
+var webpackConfig = require('./gulpfile/lib/webpack-multi-config')
 var path          = require('path')
 
 var testSrc = path.join(config.root.src, config.tasks.js.src, '/**/__tests__/*')

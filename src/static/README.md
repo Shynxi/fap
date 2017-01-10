@@ -3,7 +3,7 @@ There are some files that belong in your root destination directory that you won
 
 ### Tasks and Files
 ```
-gulpfile.js/tasks/static
+gulpfile/tasks/static
 ```
 
-Files are copied from this folder to the `root.dest` folder specified in `gulpfile.js/config.json`.
+Files are copied from this folder to the `root.dest` folder specified in `gulpfile/config.json`.

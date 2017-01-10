@@ -9,7 +9,7 @@ I've provided a web font mixin in `base/mixins.sass` for use with any fonts you 
 
 ### Tasks and Files
 ```
-gulpfile.js/tasks/css
+gulpfile/tasks/css
 ```
 Your Sass gets run through Autoprefixer, so don't prefix! The examples use the indented `.sass` syntax, but use whichever you prefer. In the `production` task, output is minified with [cssnano](https://github.com/ben-eb/cssnano).
 
