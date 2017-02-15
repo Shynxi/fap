@@ -58,9 +58,15 @@ module.exports = function(env) {
           ]
         },
         {
-          test: /\.(ttf|eot|woff2?|otf)$/i,
+          test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
           loaders: [
             'file'
+          ]
+        },
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
+          loaders: [
+            'url-loader?limit=10000&minetype=application/font-woff'
           ]
         },
         {
