@@ -8,16 +8,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "jquery": "~3.1.0"
-  },
+  "dependencies": {},
   "private": true,
-  "overrides": {
-    "bootstrap": {
-      "main": [
-        "./scss/**/*",
-        "./dist/js/bootstrap.js"
-      ]
-    }
-  }
+  "overrides": {}
 }

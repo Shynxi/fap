@@ -14,25 +14,46 @@
 
 <body>
 <header>
-  <nav class="meta-navigation navbar navbar-fixed-top navbar-sticky-top bg-primary navbar-dark">
+  <nav class="meta-navigation navbar navbar-toggleable-md bg-primary navbar-dark">
+    <button
+            class="navbar-toggler navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <a class="navbar-brand" href="#">
-      {% block logo %}
-        <img src="images/logo.jpg" alt="logo"/>
-      {% endblock logo %}
+        {% block logo %}
+          <img src="images/bootstrap.svg" width="30" height="30" alt="logo"/>
+        {% endblock logo %}
     </a>
-    {% block metaNavigation %}
-    <ul class="nav navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Link 1 <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 3</a>
-      </li>
-    </ul>
-    {% endblock metaNavigation %}
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      {% block metaNavigation %}
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      {% endblock metaNavigation %}
+
+      {% block searchHeader %}
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      {% endblock searchHeader %}
+    </div>
   </nav>
 </header>
 <div class="page">
